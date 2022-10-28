@@ -25,12 +25,32 @@ if(numero <= 5 && numero > 0){
 }
 
 //genero numero random per il computer
-function genera(){
-    let numeroRandom = Math.round(Math.random() * 5);
-
-    //sommo il numero dell'utente con quello del computer
-    let sum = numeroRandom + numero;
-    
-
-
+function genera(min, max){
+    let numeroRandom = Math.floor(Math.random() * (max - min + min)) + min;
+    console.log(`Il numero del computer è: ${numeroRandom}`);
 }
+
+//invoco la funzione
+let numeroRandom = genera(1, 5);
+
+//sommo il numero dell'utente con quello del computer
+function sum(x, y){
+    let sum = x + y;
+    return sum;
+}
+
+let valoreSommaFunzione = sum(numero, numeroRandom);
+console.log(`La somma è: ${valoreSommaFunzione}`);
+
+//stabiliamo se la somma dei due numeriè pari o dispari 
+function controlloSomma(){
+    let controllo = '';
+    if( valoreSommaFunzione % 2 == 0 ){
+        controllo = 'pari';
+        return controllo;
+    }else{
+        controllo = 'dispari';
+        return controllo
+    }
+}
+
